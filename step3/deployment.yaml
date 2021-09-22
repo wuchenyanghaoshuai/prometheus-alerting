@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: centos-nginx-metrics
+  labels:
+    app: centos-nginx-metrics
+spec:
+  selector:
+    matchLabels:
+      app: centos-nginx-metrics
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: centos-nginx-metrics
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "9913"
+        prometheus.io/path: /metrics
+    spec:
+      containers:
+      - name: centos-nginx-metrics
+        image: wuchenyanghaoshuai/centos-nginx-metrics:v2
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: 128Mi
+            cpu: 0.2
+          limits:
+            memory: 222Mi
+            cpu: 0.3
+        volumeMounts:
+        - name: logs
+          mountPath: /opt/logs
+      volumes:
+      - name: logs
+        nfs:
+          server: 2966cb4aab7-tme20.cn-wulanchabu.nas.aliyuncs.com
+          path: /nfs
