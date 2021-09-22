@@ -11,6 +11,5 @@ kubectl apply -f .
 ```
 ![image](https://user-images.githubusercontent.com/39818267/134333127-541dc380-6813-4aef-8ff0-13c0356a0ee1.png)
 
-![image](https://user-images.githubusercontent.com/39818267/133442411-19ea2d7d-c072-4050-9924-afe1df2317c0.png)
 
 
