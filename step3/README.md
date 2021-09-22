@@ -168,3 +168,38 @@ secret "additional-configs" created
     name: additional-configs
     key: prometheus-additional.yaml
 ```
+```
+然后就可以看到被监控的Pod了
+```
+![image](https://user-images.githubusercontent.com/39818267/134309776-2780032d-04f1-45b4-9a2a-39b819a27536.png)
+```
+#修改rbac权限prometheus-clusterRole.yaml直接替换成下面的即可
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: prometheus-k8s
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - nodes
+  - services
+  - endpoints
+  - pods
+  - nodes/proxy
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - configmaps
+  - nodes/metrics
+  verbs:
+  - get
+- nonResourceURLs:
+  - /metrics
+  verbs:
+  - get
+```
