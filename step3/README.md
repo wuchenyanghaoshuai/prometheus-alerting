@@ -157,7 +157,7 @@ spec:
 # 要想自动发现集群中的 Service，就需要我们在 Service 的 annotation 区域添加 prometheus.io/scrape=true 的声明
 # 要想自动发现集群中的 pod，就需要我们在 pod 的 template.metadata.annotations 区域添加 prometheus.io/scrape=true 的声明
 # 将上面文件直接保存为 prometheus-additional.yaml，然后通过这个文件创建一个对应的 Secret 对象：
-# 如果没有相对应的deployment,可以使用我自带的,因为我这个已经暴露了metrics,下面的hpa也是基于这个镜像来做的
+# 如果没有相对应的deployment,可以使用我自带的,因为我这个已经暴露了metrics,下面的hpa也是基于这个镜像来做的(deployment.yaml)
 $ kubectl create secret generic additional-configs --from-file=prometheus-additional.yaml -n monitoring
 secret "additional-configs" created
 然后我们需要在声明 prometheus 的资源对象文件中通过 additionalScrapeConfigs 属性添加上这个额外的配置：(prometheus-prometheus.yaml)
