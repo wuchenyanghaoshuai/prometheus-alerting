@@ -3,6 +3,6 @@
 step1 安装prometheus-operator
 step2 接入grafana
 step3 安装完prometheus以后的操作
-step3 接入dingding告警
-step4 压力测试,实现dingding告警
+step4 接入dingding告警
+step5 压力测试,实现dingding告警
 ```
