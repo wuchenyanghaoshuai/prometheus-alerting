@@ -1,5 +1,5 @@
 ```
-# 查看prometheus的target我们可以看到kube-controller-manager 和 kube-scheduler是0/1
+# 查看prometheus的target我们可以看到kube-controller-manager 和 kube-scheduler是0/0
 ```
 ![image](https://user-images.githubusercontent.com/39818267/134302331-65be4653-32b4-4cc2-a923-9bdde139babf.png)
 
