@@ -1,4 +1,4 @@
-#请先去该地址下找到自己k8s对应的版本
+#请先去该地址下找到自己k8s对应的版本(我是1.18.0k8s)
 ```
 git clone https://github.com/prometheus-operator/kube-prometheus.git
 git checkout release-0.5
