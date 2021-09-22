@@ -1,11 +1,13 @@
 ```
 # 部署deploy (webhook-dingtalk-deployment.yaml)(webhook-secret-template.yaml)
 # 这个注意修改钉钉群的secret 跟token
+# 修改完以后直接apply即可
 ```
 ![image](https://user-images.githubusercontent.com/39818267/134323901-92b22a4a-210d-42e2-adf5-4cba3386813c.png)
 
 ```
 # 告警 rule
+# 直接apply
 ```
 ```
 # vim prometheus-rules2.yaml
