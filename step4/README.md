@@ -49,7 +49,10 @@ spec:
 ```
 这样的话就是没有问题了,这个链路就打通了，剩下的就是手动让cpu负载变高了，然后过一会就有报警发出了
 参考链接https://www.cnblogs.com/bigberg/p/13673033.html
+报警和恢复都是有钉钉消息提示的
 ```
+![image](https://user-images.githubusercontent.com/39818267/134332590-0a21cf63-1759-4241-af19-d89b934ddda9.png)
+![image](https://user-images.githubusercontent.com/39818267/134332608-d8449f3b-fc92-4221-ae30-e4d8fa671c06.png)
 
 
 ```
