@@ -380,7 +380,9 @@ kubectl -n monitoring port-forward svc/thanos-querier 9090:9090
 ```
 ![image](https://user-images.githubusercontent.com/39818267/134810312-8e729c2f-e59f-4b34-b745-a766ecda913e.png)
 ```
-#最后将grafana的抓取地址改为thanos-querier的地址
+#最后将grafana的抓取地址改为thanos-querier的地址,然后用新的地址来创建图即可
 ```
 ![image](https://user-images.githubusercontent.com/39818267/134810345-f321d83e-65f6-4ff3-9215-11707a78d138.png)
+![image](https://user-images.githubusercontent.com/39818267/134810430-18901912-303e-46f9-a157-3d0a4fd06847.png)
+
 
