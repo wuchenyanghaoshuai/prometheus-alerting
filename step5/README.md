@@ -20,7 +20,7 @@ Bucket：主要用于展示对象存储中历史数据的存储情况，查看�
       key: thanos.yaml
       name: thanos-objectstorage
 ```
-# 此处有一个添加以后的截图
+![image](https://user-images.githubusercontent.com/39818267/134810002-996f9efc-7c8b-4005-bf02-f821fe31143f.png)
 ```
 Thanos 的 Querier 组件来提供一个全局的统一查询入口。对于 Quierier 最重要的就是要配置上 Thanos 的 Sidecar 地址，
 我们这里完全可以直接使用 Headless Service 去自动发现：(querier.yaml)
@@ -151,7 +151,7 @@ Store 组件
 Thanos Store 组件，将历史监控指标存储在对象存储中
 目前 Thanos 支持的对象存储有
 ```
-#此处增加一个截图
+![image](https://user-images.githubusercontent.com/39818267/134810026-79e0d050-10ef-4c83-acdb-a6445d7195d1.png)
 
 ```
 我们这里使用流行的第三方软件模拟S3存储
@@ -262,7 +262,12 @@ spec:
           timeoutSeconds: 5
           failureThreshold: 3
 ```
-#此处需要一个截图
+```
+#点击右下角创建bucket即可
+#账号密码 minio/minio123
+```
+![image](https://user-images.githubusercontent.com/39818267/134810075-1b482545-13c5-466a-ae52-48b61ab63560.png)
+
 ```
 #登录上minio创建一个bucket
 ```
@@ -293,6 +298,7 @@ stringData:
 Prometheus和thanos-store-gateway的有状态集被标记为thanos-store-api：“ true”，以便无头服务发现每个pod。
 
 Thanos Query将使用此无头服务来查询所有Prometheus实例中的数据（store.yaml）
+
 apiVersion: v1
 kind: Service
 metadata:
@@ -366,8 +372,15 @@ spec:
           secret:
             secretName: thanos-objectstorage 
 ```
-#此处需要一张图
+
+```
+查询组件，能抓取sidecar的热数据，和store的旧数据
+
+kubectl -n monitoring port-forward svc/thanos-querier 9090:9090
+```
+![image](https://user-images.githubusercontent.com/39818267/134810312-8e729c2f-e59f-4b34-b745-a766ecda913e.png)
 ```
 #最后将grafana的抓取地址改为thanos-querier的地址
 ```
+![image](https://user-images.githubusercontent.com/39818267/134810345-f321d83e-65f6-4ff3-9215-11707a78d138.png)
 
