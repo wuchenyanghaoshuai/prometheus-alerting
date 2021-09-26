@@ -385,4 +385,15 @@ kubectl -n monitoring port-forward svc/thanos-querier 9090:9090
 ![image](https://user-images.githubusercontent.com/39818267/134810345-f321d83e-65f6-4ff3-9215-11707a78d138.png)
 ![image](https://user-images.githubusercontent.com/39818267/134810430-18901912-303e-46f9-a157-3d0a4fd06847.png)
 
+```
+#参考文档
+https://github.com/prometheus-operator/kube-prometheus
+https://github.com/timonwong/prometheus-webhook-dingtalk
+https://www.cnblogs.com/bigberg/p/13673033.html
+https://github.com/prometheus-operator/prometheus-operator/issues/926  # kubelet targets down - 401 Unauthorized
+https://docs.min.io/cn/deploy-minio-on-kubernetes.html
+https://www.mdeditor.tw/pl/pi4m
+https://www.metricfire.com/blog/ha-kubernetes-monitoring-using-prometheus-and-thanos/?GAID=1579914937.1612180807
+https://k8s.imroc.io/monitoring/build-cloud-native-large-scale-distributed-monitoring-system/thanos-deploy/
+```
 
