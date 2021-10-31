@@ -263,7 +263,7 @@ spec:
           failureThreshold: 3
 ```
 ```
-#点击右下角创建bucket即可
+#点击右下角创建bucket即可 prometheus-thanos(看配置文件里面定义的)
 #账号密码 minio/minio123
 ```
 ![image](https://user-images.githubusercontent.com/39818267/134810075-1b482545-13c5-466a-ae52-48b61ab63560.png)
