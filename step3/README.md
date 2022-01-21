@@ -172,6 +172,12 @@ secret "additional-configs" created
 然后就可以看到被监控的Pod了
 ```
 ![image](https://user-images.githubusercontent.com/39818267/134309776-2780032d-04f1-45b4-9a2a-39b819a27536.png)
+
+# 权限修改
+# 查看monitoring名称空间下的prometheus的日志会报错,这个是因为权限不够导致的
+# kubectl logs -f prometheus-k8s-0 -c prometheus -n monitoring
+![image](https://user-images.githubusercontent.com/39818267/150484183-a0766a55-91ac-4153-982b-26b0fa58a878.png)
+
 ```
 #修改rbac权限prometheus-clusterRole.yaml直接替换成下面的即可
 apiVersion: rbac.authorization.k8s.io/v1
