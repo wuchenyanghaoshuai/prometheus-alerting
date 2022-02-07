@@ -50,8 +50,6 @@ spec:
 ![image](https://user-images.githubusercontent.com/39818267/134332073-ae2fb798-7be8-48a7-85af-465bf18cf916.png)
 ```
 # 如果你的机器是部署到自己电脑上的,有可能webhookdingtlak的deploy访问不到网络,只需要deploy那块加一个hostnetwork: true即可,查看日志记得,下面是一个部署到内网的访问不到dingding api的图片
-![image](https://user-images.githubusercontent.com/39818267/150495300-ce20f2f9-656c-4aca-9cc9-2ef55fa982ca.png)
-![image](https://user-images.githubusercontent.com/39818267/150495336-f4e2364c-adef-484b-b296-178bca2a40bf.png)
 
 这样的话就是没有问题了,这个链路就打通了，剩下的就是手动让cpu负载变高了，然后过一会就有报警发出了
 参考链接https://www.cnblogs.com/bigberg/p/13673033.html
@@ -60,5 +58,7 @@ spec:
 ![image](https://user-images.githubusercontent.com/39818267/134332590-0a21cf63-1759-4241-af19-d89b934ddda9.png)
 ![image](https://user-images.githubusercontent.com/39818267/134332608-d8449f3b-fc92-4221-ae30-e4d8fa671c06.png)
 
+![image](https://user-images.githubusercontent.com/39818267/150495300-ce20f2f9-656c-4aca-9cc9-2ef55fa982ca.png)
+![image](https://user-images.githubusercontent.com/39818267/150495336-f4e2364c-adef-484b-b296-178bca2a40bf.png)
 
 ```
