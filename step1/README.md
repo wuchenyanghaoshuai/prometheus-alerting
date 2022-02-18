@@ -1,4 +1,5 @@
-#请先去该地址下找到自己k8s对应的版本(我是1.18.0k8s)
+#请先去该地址下找到自己k8s对应的版本(我是1.18.0k8s)如果是1.20.0版本的话，参考这个链接地址https://github.com/wuchenyanghaoshuai/prometheus-operator
+
 ```
 git clone https://github.com/prometheus-operator/kube-prometheus.git
 git checkout release-0.5
