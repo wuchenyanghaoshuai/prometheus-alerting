@@ -5,7 +5,7 @@ step2 接入grafana
 step3 安装完prometheus以后的操作
 step4 接入dingding告警,压力测试,实现dingding告警
 step5 Thanos存储持久化，多集群查询
-
+step6 Prometheus-operator 文档
 k8s prometheus监控
 一、node
 状态，内存，CPU，内存，负载，磁盘
