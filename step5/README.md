@@ -14,13 +14,15 @@ Bucket：主要用于展示对象存储中历史数据的存储情况，查看�
 直接apply目录里面的yaml即可,注意修改nfs的地址跟挂载的目录
 ```
 ```
-2.由于prometheus-operator 支持thanos扩展，我们直接在prometheus-prometheus.yaml最后添加 thanos 配置
+2.由于prometheus-operator 支持thanos扩展，我们直接在prometheus-prometheus.yaml最后添加 thanos 配置,注意此图内还有一个storage的字段要添加,这个是查询时用的如果不添加的话,使用thanos的querier的时候会报错  "No StoreAPIs matched for this queryNo StoreAPIs matched for this query"
   thanos:  #  添加 thanos 配置
     objectStorageConfig:
       key: thanos.yaml
       name: thanos-objectstorage
 ```
 ![image](https://user-images.githubusercontent.com/39818267/134810002-996f9efc-7c8b-4005-bf02-f821fe31143f.png)
+![image](https://user-images.githubusercontent.com/39818267/158297871-e9818f30-18f3-41ff-887c-48ec15e06242.png)
+
 ```
 Thanos 的 Querier 组件来提供一个全局的统一查询入口。对于 Quierier 最重要的就是要配置上 Thanos 的 Sidecar 地址，
 我们这里完全可以直接使用 Headless Service 去自动发现：(querier.yaml)
