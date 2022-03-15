@@ -1,0 +1,28 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  labels:
+    prometheus: k8s
+    role: alert-rules
+  name: prometheus-k8s-rules2
+  namespace: monitoring
+spec:
+  groups:
+  - name: mysql
+    rules:
+    - alert: Used more than 80% of max connections limited
+      annotations:
+        message: 使用超过80%连接限制
+      expr: |
+        mysql_global_status_max_used_connections > mysql_global_variables_max_connections * 0.8
+      for: 5m
+      labels:
+        severity: critical
+    - alert: Pod CPU too high
+      annotations:
+        message: Pod2分钟内cpu太高了
+      expr: |
+         sum(irate(container_cpu_usage_seconds_total[2m])) by (container, pod) / (sum(container_spec_cpu_quota /100000) by (container, pod))  * 100 > 80
+      for: 2m
+      labels:
+        severity: critical

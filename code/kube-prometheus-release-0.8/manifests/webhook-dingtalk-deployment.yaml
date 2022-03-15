@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webhook-dingtalk
+  namespace: monitoring
+spec:
+  selector:
+    matchLabels:
+      app: webhook-dingtalk
+  template:
+    metadata:
+      labels:
+        app: webhook-dingtalk
+    spec:
+      containers:
+      - name: webhook-dingtalk
+        image: timonwong/prometheus-webhook-dingtalk:v1.4.0
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8060
+          name: http
+        resources:
+          requests:
+            cpu: 50m
+            memory: 500Mi
+          limits:
+            cpu: 500m
+            memory: 1000Mi
+        volumeMounts:
+        - mountPath: "/etc/prometheus-webhook-dingtalk/"
+          name: webhook-config
+        - mountPath: "/etc/prometheus-webhook-dingtalk/templates/"
+          name: webhook-template
+      volumes:
+      - name: webhook-config
+        secret:
+          secretName: webhook-config
+      - name: webhook-template
+        secret:
+          secretName: webhook-template
+      tolerations:
+      - key: node-role.kubernetes.io/master
+        operator: Exists
+        effect: NoSchedule
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: webhook-dingtalk
+  namespace: monitoring
+spec:
+  selector:
+    app: webhook-dingtalk
+  ports:
+  - name: hook
+    port: 8060
+    targetPort: http

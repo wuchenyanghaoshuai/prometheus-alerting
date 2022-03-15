@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: thanos-compactor
+  namespace: monitoring
+  labels:
+    app: thanos-compactor
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: thanos-compactor
+  serviceName: thanos-compactor
+  template:
+    metadata:
+      labels:
+        app: thanos-compactor
+    spec:
+      containers:
+      - name: thanos
+        image: thanosio/thanos:v0.11.0
+        args:
+        - "compact"
+        - "--log.level=debug"
+        - "--data-dir=/data"
+        - "--objstore.config-file=/etc/secret/thanos.yaml"
+        - "--wait"
+        ports:
+        - name: http
+          containerPort: 10902
+        livenessProbe:
+          httpGet:
+            port: 10902
+            path: /-/healthy
+          initialDelaySeconds: 10
+        readinessProbe:
+          httpGet:
+            port: 10902
+            path: /-/ready
+          initialDelaySeconds: 15
+        volumeMounts:
+        - name: object-storage-config
+          mountPath: /etc/secret
+          readOnly: false
+      volumes:
+      - name: object-storage-config   # 挂载对象存储配置
+        secret:
+          secretName: thanos-objectstorage
