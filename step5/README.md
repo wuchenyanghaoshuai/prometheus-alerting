@@ -24,6 +24,8 @@ Bucket：主要用于展示对象存储中历史数据的存储情况，查看�
 ```
 ![image](https://user-images.githubusercontent.com/39818267/134810002-996f9efc-7c8b-4005-bf02-f821fe31143f.png)
 ![image](https://user-images.githubusercontent.com/39818267/158297871-e9818f30-18f3-41ff-887c-48ec15e06242.png)
+<img width="268" alt="image" src="https://user-images.githubusercontent.com/39818267/158347687-bfa069a4-0ddc-4dc4-8a5a-84022d6ae9a6.png">
+
 
 ```
 Thanos 的 Querier 组件来提供一个全局的统一查询入口。对于 Quierier 最重要的就是要配置上 Thanos 的 Sidecar 地址，
