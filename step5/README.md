@@ -14,7 +14,9 @@ Bucket：主要用于展示对象存储中历史数据的存储情况，查看�
 直接apply目录里面的yaml即可,注意修改nfs的地址跟挂载的目录
 ```
 ```
-2.由于prometheus-operator 支持thanos扩展，我们直接在prometheus-prometheus.yaml最后添加 thanos 配置,注意此图内还有一个storage的字段要添加,这个是查询时用的如果不添加的话,使用thanos的querier的时候会报错  "No StoreAPIs matched for this queryNo StoreAPIs matched for this query"
+2.由于prometheus-operator 支持thanos扩展，我们直接在prometheus-prometheus.yaml最后添加 thanos 配置,
+  注意此图内还有一个storage的字段要添加,这个是查询时用的如果不添加的话,使用thanos的querier的时候会报错  
+  "No StoreAPIs matched for this queryNo StoreAPIs matched for this query"
   thanos:  #  添加 thanos 配置
     objectStorageConfig:
       key: thanos.yaml
