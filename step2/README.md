@@ -3,7 +3,7 @@ grafana的账号密码均为admin,登录进去以后添加一个datasource即可
 点击左侧➕ ,点击Import 在id那一栏输入13105点击load即可
 13105 是监控k8s的
 8919 是监控node的
-然后你就得到一个漂亮的图案了
+然后你就得到一个漂亮的图案了.
 ```
 ![image](https://user-images.githubusercontent.com/39818267/133443501-828eb6ca-d74f-4724-9a9a-ff7b35272adb.png)
 ![image](https://user-images.githubusercontent.com/39818267/133443625-8f86163f-a946-4ed0-8685-592492a65279.png)
