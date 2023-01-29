@@ -1,3 +1,4 @@
+# 
 ```
 多集群监控组件Thanos
 边车组件（Sidecar）：连接 Prometheus，并把 Prometheus 暴露给查询网关（Querier/Query），以供实时查询，并且可以上传 Prometheus 数据给云存储，以供长期保存
