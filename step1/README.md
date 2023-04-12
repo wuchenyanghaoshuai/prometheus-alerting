@@ -1,5 +1,5 @@
 #请先去该地址下找到自己k8s对应的版本(我是1.18.0k8s)如果是1.20.0版本的话，参考这个链接地址https://github.com/wuchenyanghaoshuai/prometheus-operator
-
+#如果你的集群是阿里云的ACK,请先确保集群内没有prometheus，要不然会跟自建的prometheus有冲突，要去控制它卸载，图片附上
 ```
 git clone https://github.com/prometheus-operator/kube-prometheus.git
 git checkout release-0.5
@@ -12,5 +12,6 @@ kubectl apply -f .
 ```
 ![image](https://user-images.githubusercontent.com/39818267/134333127-541dc380-6813-4aef-8ff0-13c0356a0ee1.png)
 
+<img width="1892" alt="image" src="https://user-images.githubusercontent.com/39818267/231376752-bfe94c18-6187-41f3-969c-2ce44bdefea2.png">
 
 
